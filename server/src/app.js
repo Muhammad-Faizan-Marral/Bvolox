@@ -20,7 +20,9 @@ app.use(
     allowedHeaders: ["Content-Type", "Authorization"],
   }),
 );
-
+app.get("/", (req,res)=>{
+res.json({message:"Welecome to Volox Chat App API ."})
+});
 app.use("/api/auth", authRouter);
 app.use("/api/chat", chatRouter); 
 app.use("/api/dm", dmRouter); 
