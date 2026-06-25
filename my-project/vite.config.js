@@ -4,7 +4,6 @@ import babel from "@rolldown/plugin-babel";
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
-  
   plugins: [
     react(),
     tailwindcss(),
@@ -12,4 +11,7 @@ export default defineConfig({
       presets: [reactCompilerPreset()],
     }),
   ],
+  esbuild: {
+    drop: ["console", "debugger"],
+  },
 });
